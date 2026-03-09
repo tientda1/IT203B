@@ -1,0 +1,4 @@
+Kiểm tra xem một User có phải là Admin hay không (trả về true/false). - Predicate vì Predicate đại diện cho 1 phép thử
+Chuyển đổi một đối tượng User thành một chuỗi String chứa thông tin username. - Function vì function nhận vào 1 tham số kiểu T và biến đổi nó thành kiểu khác
+In thông tin chi tiết của User ra màn hình Console. - Consumer vì consumer nhận vào 1 đối tượng để thực hiện 1 hành động nào đó nhưng ko trả về kết quả nào
+Khởi tạo một đối tượng User mới với các giá trị mặc định - Supplier vì supllier không nhận vào giá trị nào nhưng trả về 1 đối tượng
