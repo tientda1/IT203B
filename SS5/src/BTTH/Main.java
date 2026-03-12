@@ -74,6 +74,5 @@ public class Main {
                     System.out.println("Lựa chọn không hợp lệ. Vui lòng thử lại.");
             }
         }
-        scanner.close();
     }
 }
