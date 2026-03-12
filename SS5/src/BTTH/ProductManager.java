@@ -19,7 +19,7 @@ public class ProductManager {
             throw new InvalidProductException("Lỗi: Sản phẩm có ID " + product.getId() + " đã tồn tại!");
         }
         productList.add(product);
-        System.out.println("=> Thêm sản phẩm thành công!");
+        System.out.println("Thêm sản phẩm thành công!");
     }
 
     public void displayProducts() {
@@ -45,7 +45,7 @@ public class ProductManager {
 
         if (productOptional.isPresent()) {
             productOptional.get().setQuantity(newQuantity);
-            System.out.println("=> Cập nhật số lượng thành công!");
+            System.out.println("Cập nhật số lượng thành công!");
         } else {
             throw new InvalidProductException("Lỗi: Không tìm thấy sản phẩm có ID " + id);
         }
@@ -54,9 +54,9 @@ public class ProductManager {
     public void deleteOutOfStock() {
         boolean isRemoved = productList.removeIf(p -> p.getQuantity() == 0);
         if (isRemoved) {
-            System.out.println("=> Đã dọn dẹp các sản phẩm có số lượng = 0 trong kho.");
+            System.out.println("Đã dọn dẹp các sản phẩm có số lượng = 0 trong kho.");
         } else {
-            System.out.println("=> Không có sản phẩm nào hết hàng.");
+            System.out.println("Không có sản phẩm nào hết hàng.");
         }
     }
 }
