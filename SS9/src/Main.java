@@ -15,7 +15,7 @@ public class Main {
             System.out.println("3. Cập nhật thông tin sản phẩm");
             System.out.println("4. Xoá sản phẩm");
             System.out.println("5. Thoát");
-            System.out.println("-----------------------------------------------------------------------");
+            System.out.println("--------------------------------------------------------------------");
             System.out.print("Lựa chọn của bạn: ");
 
             int choice = scanner.nextInt();
