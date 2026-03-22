@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JavaAdvanced.iml" filepath="$PROJECT_DIR$/JavaAdvanced.iml" />
       <module fileurl="file://$PROJECT_DIR$/SS1/SS1.iml" filepath="$PROJECT_DIR$/SS1/SS1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SS11/SS11.iml" filepath="$PROJECT_DIR$/SS11/SS11.iml" />
       <module fileurl="file://$PROJECT_DIR$/SS2/SS2.iml" filepath="$PROJECT_DIR$/SS2/SS2.iml" />
       <module fileurl="file://$PROJECT_DIR$/SS3/SS3.iml" filepath="$PROJECT_DIR$/SS3/SS3.iml" />
       <module fileurl="file://$PROJECT_DIR$/SS4/SS4.iml" filepath="$PROJECT_DIR$/SS4/SS4.iml" />
