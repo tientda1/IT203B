@@ -29,7 +29,6 @@ public class PatientSearch {
             System.out.println("Chuỗi gốc từ người dùng: " + inputName);
             System.out.println("Chuỗi sau khi làm sạch:  " + safeName);
 
-            // 2. Mở kết nối
             conn = PatientSearch.getConnection();
             stmt = conn.createStatement();
 

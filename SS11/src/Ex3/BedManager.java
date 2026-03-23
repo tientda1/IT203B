@@ -31,7 +31,6 @@ public class BedManager {
             if (rowsAffected > 0) {
                 System.out.println("THÀNH CÔNG: Đã cập nhật giường [" + inputId + "] sang trạng thái 'Đang sử dụng'.");
             } else {
-                // Trả về 0 -> SQL chạy hợp lệ nhưng KHÔNG tìm thấy mã giường này
                 System.out.println(" LỖI: Cập nhật thất bại! Mã giường [" + inputId + "] KHÔNG TỒN TẠI trong hệ thống.");
             }
 
