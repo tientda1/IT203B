@@ -1,3 +1,17 @@
+// Phân tích
+// Vì sao phải registerOutParameter()?
+//  JDBC cần biết:
+//  Vị trí tham số OUT
+//  Kiểu dữ liệu của nó
+//  Khi gọi: cstmt.registerOutParameter(2, Types.DECIMAL);
+//
+//  JDBC:
+//  Chuẩn bị bộ nhớ nhận dữ liệu trả về
+//  Map kiểu SQL → Java đúng cách
+//  Nếu SQL là DECIMAL thì dùng Types.DECIMAL
+
+
+
 package Ex3;
 
 import utils.DBConnection;

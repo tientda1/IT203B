@@ -1,3 +1,16 @@
+// Phân tích
+//1. Câu lệnh SQL thực tế sau khi nối chuỗi
+//  Khi biến patientName mang giá trị "' OR '1'='1", chuỗi truy vấn hoàn chỉnh được ứng dụng gửi xuống Database sẽ biến đổi thành:
+//  SELECT * FROM Patients WHERE full_name = '' OR '1'='1'
+//2. Tại sao mệnh đề WHERE lại luôn đúng (True)?
+//  Hệ quản trị CSDL sẽ quét qua từng dòng trong bảng Patients và đánh giá điều kiện WHERE. Lúc này, mệnh đề đã bị chia làm 2 vế bởi toán tử OR:
+//  Vế 1 (full_name = ''): Thường trả về FALSE (sai) vì hiếm có bệnh nhân nào có tên rỗng.
+//  Vế 2 ('1'='1'): Luôn luôn trả về TRUE (đúng) vì mặt logic toán học, 1 chắc chắn bằng 1.
+//  Theo quy tắc của toán tử logic OR, chỉ cần một trong hai vế đúng thì toàn bộ biểu thức sẽ đúng (FALSE OR TRUE = TRUE). Do đó, mệnh đề WHERE trả về TRUE đối với tất cả các dòng hiện có trong bảng.
+//3. Hậu quả luồng thực thi
+//  Thay vì truy xuất đúng một bệnh nhân theo tên được nhập, Database hiểu lệnh này là: "hãy lấy ra dữ liệu nếu tên người đó rỗng HOẶC 1 bằng 1". Vì vế sau luôn đúng, CSDL sẽ trả về toàn bộ danh sách bệnh nhân đang có, dẫn đến việc rò rỉ dữ liệu y tế nghiêm trọng.
+
+
 package Ex4;
 
 import java.sql.Connection;

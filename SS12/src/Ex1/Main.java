@@ -1,3 +1,21 @@
+// Phân tích:
+// Vì sao PreparedStatement là "tấm khiên"?
+//  1. Tách SQL và dữ liệu
+//  SQL: SELECT * FROM Doctors WHERE code = ? AND pass = ?
+//  Dữ liệu truyền riêng → không thể phá cấu trúc
+//  2. Cơ chế Pre-compiled (biên dịch trước)
+//  DB:
+//  Parse & compile SQL trước
+//  Khóa cấu trúc query
+//  Sau đó mới nhận giá trị
+//  Input không thể:
+//  Thêm OR
+//  Thêm điều kiện
+//  Thay đổi logic
+
+
+
+
 package Ex1;
 
 import utils.DBConnection;

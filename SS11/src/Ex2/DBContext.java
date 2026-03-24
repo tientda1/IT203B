@@ -1,3 +1,15 @@
+// Phân tích
+//1.Tại sao dùng if không đủ để in danh sách?
+//  Lệnh if chỉ kiểm tra điều kiện và thực thi khối lệnh bên trong một lần duy nhất.
+//  Khi dùng if (rs.next()), chương trình chỉ lấy và in ra được bản ghi đầu tiên (nếu bảng có dữ liệu) rồi thoát khỏi khối điều kiện. Để duyệt qua toàn bộ các loại thuốc trong kho, bắt buộc phải dùng cấu trúc vòng lặp (cụ thể là while).
+//2. Con trỏ của ResultSet hoạt động ra sao sau mỗi lần gọi next()?
+//  Trạng thái ban đầu: Khi ResultSet vừa được khởi tạo, con trỏ dữ liệu nằm ở vị trí trước dòng đầu tiên (Before First). Lúc này bạn chưa thể lấy dữ liệu.
+//  Hành vi của next(): Mỗi khi gọi rs.next(), con trỏ sẽ dịch chuyển xuống đúng một dòng tiếp theo.
+//  Giá trị trả về: Nếu dòng hiện tại có chứa dữ liệu, hàm trả về true. Nếu con trỏ đã vượt qua dòng dữ liệu cuối cùng (After Last) hoặc bảng vốn dĩ trống rỗng, hàm trả về false.
+
+
+
+
 package Ex2;
 
 import java.sql.Connection;

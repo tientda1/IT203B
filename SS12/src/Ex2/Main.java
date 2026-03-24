@@ -1,3 +1,19 @@
+// Phân tích
+// 1. Không truyền dạng chuỗi
+//  PreparedStatement gửi dữ liệu theo kiểu nhị phân (binary), không phải text
+//  DB nhận đúng kiểu:
+//  double -> số thực
+//  int -> số nguyên
+//  2. Không phụ thuộc Locale
+//  Không có chuyện: dấu . hay ,
+//  Driver JDBC tự xử lý đúng chuẩn DB
+//  3. Tách biệt hoàn toàn:
+//  SQL: cấu trúc
+//  Data: giá trị
+//->Không format -> không lỗi
+
+
+
 package Ex2;
 
 import utils.DBConnection;

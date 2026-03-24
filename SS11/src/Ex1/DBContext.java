@@ -1,3 +1,14 @@
+// Phân tích
+//1. Về kỹ thuật:
+//  Đoạn code bị lỗi rò rỉ kết nối (Connection Leak) do liên tục mở (getConnection) mà không đóng.
+//  Các kết nối cũ không được giải phóng sẽ làm cạn kiệt giới hạn kết nối tối đa (max_connections) của Database, đồng thời làm tràn RAM/CPU khiến hệ thống từ chối các yêu cầu mới và bị "treo".
+//
+//2. Sự nguy hiểm với hệ thống Y tế:
+//  Chậm trễ cấp cứu: Bác sĩ không thể truy xuất bệnh án (nhóm máu, tiền sử dị ứng...) ngay lập tức khi hệ thống sập, đe dọa tính mạng bệnh nhân.
+//  Nguy cơ mất dữ liệu: Nếu hệ thống treo đúng lúc đang nhập kết quả xét nghiệm, dữ liệu có thể bị lỗi hoặc mất mát.
+//  Phá vỡ tính liên tục: Quản lý kết nối lỏng lẻo buộc đội IT phải khởi động lại server liên tục, phá vỡ nguyên tắc hoạt động xuyên suốt 24/7 của bệnh viện.
+
+
 package Ex1;
 
 import java.sql.Connection;

@@ -1,3 +1,25 @@
+// Phân tích
+// Mỗi vòng lặp (1000 lần), DB phải:
+//  Parse (phân tích SQL)
+//  Kiểm tra cú pháp
+//  Tách câu lệnh
+//  Optimize (tối ưu)
+//  Tạo Execution Plan
+//  Compile (biên dịch)
+//  Chuẩn bị thực thi
+//  Tổng cộng: 1000 lần làm lại cùng 1 việc
+//  Vấn đề cốt lõi:
+//  Câu SQL giống nhau về cấu trúc
+//  Chỉ khác giá trị data
+//  Nhưng DB vẫn phải:
+//  Parse -> Optimize -> Execute  (lặp lại 1000 lần)
+//  Hậu quả:
+//  CPU DB tăng cao
+//  Tốn thời gian xử lý
+//  Hiệu năng cực chậm khi dữ liệu lớn
+
+
+
 package Ex4;
 
 import utils.DBConnection;

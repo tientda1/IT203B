@@ -1,3 +1,24 @@
+// Kịch bản lỗi
+//1. Vi phạm Khóa chính (Primary Key Violation):
+//  Kịch bản: Người dùng nhập Mã bác sĩ (ví dụ: DOC001) đã tồn tại sẵn trong bảng Doctors.
+//  Hệ quả: Database từ chối bản ghi. Java sẽ ném ra ngoại lệ SQLIntegrityConstraintViolationException (Lỗi Duplicate entry).
+//2. Tràn dữ liệu (Data Truncation):
+//  Kịch bản: Nhập tên bác sĩ hoặc chuyên khoa có độ dài vượt quá giới hạn thiết kế của cột (ví dụ: gõ chuỗi 100 ký tự vào cột chỉ cho phép VARCHAR(50)).
+//  Hệ quả: Hệ thống báo lỗi SQLException: Data too long for column.
+//3. Sai định dạng dữ liệu (Type Mismatch / Format Error):
+//  Kịch bản: Nhập chữ cái vào trường yêu cầu số (như số điện thoại, năm sinh), hoặc nhập sai chuẩn ngày tháng (nhập 24/03/2026 trong khi SQL mặc định yêu cầu chuẩn YYYY-MM-DD).
+//  Hệ quả: Lỗi InputMismatchException (từ đối tượng Scanner của Java) hoặc SQLException: Incorrect date value từ CSDL.
+//4. Vi phạm ràng buộc rỗng (NOT NULL Constraint):
+//  Kịch bản: Bỏ qua không nhập liệu (nhấn Enter lướt qua) ở các trường bắt buộc phải có dữ liệu như Tên bác sĩ.
+//  Hệ quả: Ném ra lỗi Column cannot be null.
+//5. Mất kết nối đột ngột (Connection Drop):
+//  Kịch bản: Ứng dụng Console đang treo ở menu chờ lệnh, nhưng Database server bị khởi động lại hoặc rớt mạng. Khi chọn chức năng, hệ thống không kết nối được.
+//  Hệ quả: Báo lỗi Communications link failure.
+
+
+
+
+
 package Ex5;
 
 import java.util.Scanner;

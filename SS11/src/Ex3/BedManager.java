@@ -1,3 +1,16 @@
+// Phân tích
+//1. Ý nghĩa giá trị trả về của executeUpdate()
+//  Khi thực thi các lệnh thay đổi dữ liệu (INSERT, UPDATE, DELETE), phương thức executeUpdate() không trả về tập dữ liệu mà trả về một số nguyên (int).
+//  Con số này chính là số lượng bản ghi (rows) đã bị tác động trong database.
+//  Việc cập nhật một bed_id không tồn tại không phải là lỗi cú pháp hay kết nối, nên Java sẽ không ném ra ngoại lệ (Exception). Nó chỉ đơn giản thực thi lệnh và trả về giá trị 0 (vì không tìm thấy dòng nào để update). Việc đoạn code cũ bỏ qua giá trị này dẫn đến việc luôn in ra thông báo "thành công" một cách mù quáng.
+//2. Cách xử lý để phản hồi chính xác cho y tá
+//  Để khắc phục, hứng giá trị trả về và kiểm tra bằng điều kiện rẽ nhánh:
+//  Gán kết quả: int rowsAffected = stmt.executeUpdate(sql);
+//  Kiểm tra if (rowsAffected > 0): Thông báo cập nhật thành công.
+//  Kiểm tra else (hoặc rowsAffected == 0): Báo lỗi "Mã giường này không tồn tại!".
+
+
+
 package Ex3;
 
 import java.sql.Connection;
